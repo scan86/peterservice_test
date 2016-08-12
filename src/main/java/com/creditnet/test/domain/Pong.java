@@ -23,4 +23,12 @@ public class Pong {
         this.localDateTime = localDateTime;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return localDateTime;
+    }
+
 }
