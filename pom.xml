@@ -46,8 +46,6 @@
 			<artifactId>jackson-datatype-jsr310</artifactId>
 			<version>2.6.1</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
@@ -55,6 +53,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+					<embeddedLaunchScriptProperties>
+						<mode>service</mode>
+					</embeddedLaunchScriptProperties>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
