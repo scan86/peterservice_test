@@ -14,13 +14,17 @@ public class Pong {
     @JsonProperty
     private String message;
 
+    @JsonProperty
+    private String version;
+
     @JsonProperty("timestamp")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime localDateTime;
 
-    public Pong(String message, LocalDateTime localDateTime) {
+    public Pong(String message, LocalDateTime localDateTime, String version) {
         this.message = message;
         this.localDateTime = localDateTime;
+        this.version = version;
     }
 
     public String getMessage() {
@@ -29,6 +33,10 @@ public class Pong {
 
     public LocalDateTime getLocalDateTime() {
         return localDateTime;
+    }
+
+    public String getVersion() {
+        return version;
     }
 
 }

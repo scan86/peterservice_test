@@ -5,7 +5,7 @@
 
 	<groupId>com.creditnet.test</groupId>
 	<artifactId>pingservice</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>pingservice</name>

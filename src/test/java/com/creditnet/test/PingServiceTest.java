@@ -31,6 +31,7 @@ public class PingServiceTest {
         Assert.assertNotNull(pong);
         Assert.assertNotNull(pong.getMessage());
         Assert.assertNotNull(pong.getLocalDateTime());
+        Assert.assertNotNull(pong.getVersion());
     }
 
 }
