@@ -1,0 +1,64 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          pingservice
+# Required-Start:    $remote_fs $syslog $network
+# Required-Stop:     $remote_fs $syslog $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: pingservice
+# Description:       Demo project for Spring Boot
+# chkconfig:         2345 99 01
+### END INIT INFO
+
+jar="/usr/share/pingservice/pingservice.jar"
+conf="/etc/sysconfig/pingservice"
+
+log() {
+  local msg=$@ dt=$(date "+%F %H:%M:%S")
+
+  echo "$dt: $0: $msg"
+}
+
+err() {
+  local msg=$@ dt=$(date "+%F %H:%M:%S")
+
+  echo "$dt: error: $msg"
+  exit 1
+}
+
+show_help() {
+  echo 'Usage: /etc/init.d/pingservice {start|stop|restart|status}'
+  exit 1
+}
+
+main() {
+  local action=$1
+  [ -z $action ] && show_help
+
+  [ ! -f $jar ]  && err "file not found: $jar"
+  [ ! -f $conf ] && err "file not found: $conf"
+
+  source $conf  
+  
+  case "$action" in
+    start)
+      $jar start
+    ;;
+    stop)
+      $jar stop
+    ;;
+    restart)
+      $jar restart
+    ;;
+    status)
+      $jar status
+    ;;
+    *)
+      echo "unknown action: $action"
+      show_help
+    ;;
+  esac
+  
+}
+
+main "$@"

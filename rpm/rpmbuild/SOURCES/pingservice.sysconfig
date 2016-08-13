@@ -1,0 +1,9 @@
+# 
+# availible options list: 
+#   http://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html#deployment-script-customization-conf-file
+#
+
+export JAVA_OPTS="-Xms512m -Xmx512m"
+
+export LOG_FOLDER="/var/log/pingservice"
+export LOG_FILENAME="pingservice.log"
