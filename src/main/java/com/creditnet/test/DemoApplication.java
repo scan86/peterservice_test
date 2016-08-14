@@ -19,12 +19,12 @@ public class DemoApplication {
     @Bean
     public PingService pingService() {
         PingService pingService = new PingService();
-        pingService.setVersion(Constants.ver);
+        pingService.setVersion(Constants.VER);
         return pingService;
     }
 
     static class Constants {
-        final static String ver = "0.0.2";
+        final static String VER = "0.0.2";
     }
 
 }
