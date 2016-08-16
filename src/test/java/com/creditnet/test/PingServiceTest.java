@@ -3,9 +3,9 @@ package com.creditnet.test;
 import com.creditnet.test.domain.Pong;
 import com.creditnet.test.service.PingService;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -16,12 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class PingServiceTest {
 
+    @Autowired
     private PingService pingService;
-
-    @Before
-    public void init() {
-        pingService = new PingService();
-    }
 
     @Test
     public void pingTest() {
