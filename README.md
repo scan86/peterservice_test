@@ -16,11 +16,14 @@
 </plugin>
 ```
 
-* Для переопределения tcp-порта на котором сервис будет принимать соединения, нужно добавить следующёю строку в файл /etc/sysconfig/pingservice.
-export RUN_ARGS="--server.port=8888"
+* Для переопределения tcp-порта на котором сервис будет принимать соединения, нужно добавить следующe строку в файл /etc/sysconfig/pingservice.
+
+`export RUN_ARGS="--server.port=8888"`
 
 * Переменная RUN_ARGS обрабатывается сгенерённым init-скриптом расположенным в начале jar-файла и добавляет значение в строку запуска. Затем значение свойства server.port перекроет дефолтное значение в application.properties внутри jar.
 Так же через RUN_ARGS можно указать путь к внешнему application.properties (через —spring.config.location), полностью переопределив его содержимое.
+
+* Для запуска требуется java runtime 1.8. Поиск сперва в JAVA_HOME, затем в PATH.
 
 
 ## Структура папок
@@ -37,4 +40,6 @@ export RUN_ARGS="--server.port=8888"
 ## Сборака rpm
 
 * `rpmbuild --clean -v -ba pingservice.spec`
+
+
 
